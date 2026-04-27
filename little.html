@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Shree Little Paradise Basic Boarding School - Marching towards the light. Aalital Rural Municipality-5, Gobas, Dadeldhura, Nepal">
+<title>Shree Little Paradise Basic Boarding School</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sky: #2196F3;
+    --sky-light: #E3F2FD;
+    --sky-dark: #1565C0;
+    --green: #4CAF50;
+    --green-light: #E8F5E9;
+    --green-dark: #2E7D32;
+    --gold: #FFC107;
+    --gold-light: #FFF8E1;
+    --coral: #FF7043;
+    --white: #ffffff;
+    --text: #1A237E;
+    --text-muted: #546E7A;
+    --bg: #F0F8FF;
+    --card-shadow: 0 4px 20px rgba(33,150,243,0.12);
+    --radius: 16px;
+    --font-main: 'Poppins', sans-serif;
+    --font-display: 'Nunito', sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font-main); background: var(--bg); color: var(--text); overflow-x: hidden; }
+
+  /* NAVBAR */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(33,150,243,0.15);
+    padding: 0 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 70px;
+  }
+  .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .nav-logo {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--sky), var(--green));
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-display); font-weight: 900; color: white; font-size: 18px;
+  }
+  .nav-name { font-family: var(--font-display); font-weight: 800; font-size: 15px; color: var(--sky-dark); line-height: 1.2; max-width: 180px; }
+  .nav-links { display: flex; align-items: center; gap: 4px; }
+  .nav-links a {
+    text-decoration: none; color: var(--text); font-size: 13px; font-weight: 500;
+    padding: 6px 12px; border-radius: 8px; transition: all 0.2s;
+  }
+  .nav-links a:hover { background: var(--sky-light); color: var(--sky-dark); }
+  .nav-right { display: flex; align-items: center; gap: 10px; }
+  .lang-toggle {
+    display: flex; border: 2px solid var(--sky); border-radius: 20px; overflow: hidden;
+    font-size: 12px; font-weight: 700;
+  }
+  .lang-btn {
+    padding: 4px 12px; cursor: pointer; transition: all 0.2s;
+    background: none; border: none; font-weight: 700; font-size: 12px;
+  }
+  .lang-btn.active { background: var(--sky); color: white; }
+  .lang-btn:not(.active) { color: var(--sky); }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+  .hamburger span { width: 24px; height: 2.5px; background: var(--sky-dark); border-radius: 2px; transition: 0.3s; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #E3F2FD 0%, #E8F5E9 40%, #FFF9C4 100%);
+    display: flex; align-items: center; justify-content: center;
+    padding: 100px 2rem 4rem;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; top: -80px; right: -80px;
+    width: 400px; height: 400px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(33,150,243,0.1) 0%, transparent 70%);
+  }
+  .hero::after {
+    content: ''; position: absolute; bottom: -60px; left: -60px;
+    width: 350px; height: 350px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(76,175,80,0.12) 0%, transparent 70%);
+  }
+  .hero-inner { max-width: 1100px; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--gold-light); border: 2px solid var(--gold); border-radius: 30px;
+    padding: 6px 16px; font-size: 13px; font-weight: 700; color: #E65100; margin-bottom: 1.2rem;
+    animation: pulse-badge 2s infinite;
+  }
+  @keyframes pulse-badge { 0%,100%{transform:scale(1)} 50%{transform:scale(1.03)} }
+  .hero-title {
+    font-family: var(--font-display); font-weight: 900; font-size: 2.6rem;
+    color: var(--sky-dark); line-height: 1.15; margin-bottom: 0.5rem;
+  }
+  .hero-title span { color: var(--green-dark); }
+  .hero-subtitle-np { font-family: var(--font-display); font-size: 1.1rem; color: var(--text-muted); margin-bottom: 0.4rem; font-weight: 600; }
+  .hero-motto {
+    font-size: 1rem; color: var(--coral); font-style: italic; font-weight: 600;
+    margin-bottom: 1rem; display: flex; align-items: center; gap: 6px;
+  }
+  .hero-location { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.8rem; display: flex; align-items: center; gap: 6px; }
+  .hero-highlights { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 2rem; }
+  .highlight-chip {
+    background: white; border: 2px solid var(--sky-light); border-radius: 30px;
+    padding: 6px 14px; font-size: 12px; font-weight: 600; color: var(--sky-dark);
+    display: flex; align-items: center; gap: 6px;
+    box-shadow: 0 2px 8px rgba(33,150,243,0.1);
+  }
+  .chip-icon { font-size: 14px; }
+  .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 28px; border-radius: 30px; font-weight: 700; font-size: 14px;
+    text-decoration: none; transition: all 0.25s; cursor: pointer; border: none;
+  }
+  .btn-primary { background: var(--sky); color: white; box-shadow: 0 6px 20px rgba(33,150,243,0.35); }
+  .btn-primary:hover { background: var(--sky-dark); transform: translateY(-2px); box-shadow: 0 10px 28px rgba(33,150,243,0.4); }
+  .btn-outline { background: white; color: var(--sky); border: 2px solid var(--sky); }
+  .btn-outline:hover { background: var(--sky-light); transform: translateY(-2px); }
+  .btn-green { background: var(--green); color: white; box-shadow: 0 6px 20px rgba(76,175,80,0.35); }
+  .btn-green:hover { background: var(--green-dark); transform: translateY(-2px); }
+
+  /* Hero Visual */
+  .hero-visual {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+    position: relative;
+  }
+  .hero-img-card {
+    border-radius: var(--radius); overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s;
+  }
+  .hero-img-card:hover { transform: translateY(-4px) scale(1.02); }
+  .hero-img-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .hero-img-card.big { grid-column: span 2; height: 200px; }
+  .hero-img-card.small { height: 140px; }
+  .img-placeholder {
+    width: 100%; height: 100%;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    font-size: 2rem; gap: 8px;
+  }
+  .img-placeholder span { font-size: 11px; font-weight: 600; color: white; opacity: 0.85; text-align: center; }
+
+  /* SECTION COMMONS */
+  section { padding: 80px 2rem; }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+  .section-header { text-align: center; margin-bottom: 3rem; }
+  .section-tag {
+    display: inline-block; background: var(--sky-light); color: var(--sky-dark);
+    font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+    padding: 4px 16px; border-radius: 20px; margin-bottom: 0.7rem;
+  }
+  .section-tag.green { background: var(--green-light); color: var(--green-dark); }
+  .section-tag.gold { background: var(--gold-light); color: #E65100; }
+  .section-title { font-family: var(--font-display); font-weight: 800; font-size: 2rem; color: var(--sky-dark); margin-bottom: 0.5rem; }
+  .section-subtitle { color: var(--text-muted); font-size: 1rem; max-width: 600px; margin: 0 auto; }
+  .card {
+    background: white; border-radius: var(--radius); padding: 2rem;
+    box-shadow: var(--card-shadow); transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .card:hover { transform: translateY(-6px); box-shadow: 0 12px 36px rgba(33,150,243,0.18); }
+
+  /* ABOUT */
+  #about { background: white; }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; margin-bottom: 3rem; }
+  .about-img-wrap { position: relative; }
+  .about-main-img {
+    width: 100%; height: 320px; border-radius: var(--radius);
+    object-fit: cover; box-shadow: var(--card-shadow);
+  }
+  .about-badge-float {
+    position: absolute; bottom: -16px; right: -16px;
+    background: var(--sky); color: white; border-radius: 14px;
+    padding: 12px 20px; font-weight: 700; font-size: 13px; text-align: center;
+    box-shadow: 0 8px 24px rgba(33,150,243,0.35);
+  }
+  .about-badge-float strong { display: block; font-size: 22px; }
+  .about-text h3 { font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; color: var(--sky-dark); margin-bottom: 1rem; }
+  .about-text p { color: var(--text-muted); line-height: 1.8; margin-bottom: 1rem; font-size: 0.95rem; }
+  .mv-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; }
+  .mv-card { background: var(--sky-light); border-radius: var(--radius); padding: 1.5rem; border-left: 4px solid var(--sky); }
+  .mv-card.green { background: var(--green-light); border-left-color: var(--green); }
+  .mv-card.gold { background: var(--gold-light); border-left-color: var(--gold); }
+  .mv-card h4 { font-family: var(--font-display); font-weight: 800; font-size: 1rem; color: var(--sky-dark); margin-bottom: 0.5rem; }
+  .mv-card.green h4 { color: var(--green-dark); }
+  .mv-card.gold h4 { color: #E65100; }
+  .mv-card p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; }
+
+  /* ACADEMICS */
+  #academics { background: linear-gradient(180deg, #EDF7FF 0%, #F0FFF4 100%); }
+  .classes-strip {
+    display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 3rem;
+  }
+  .class-pill {
+    background: white; border: 2px solid var(--sky-light);
+    border-radius: 30px; padding: 8px 18px;
+    font-weight: 700; font-size: 13px; color: var(--sky-dark);
+    box-shadow: 0 2px 8px rgba(33,150,243,0.08);
+    transition: all 0.2s;
+  }
+  .class-pill:hover { background: var(--sky); color: white; border-color: var(--sky); transform: scale(1.05); }
+  .methods-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .method-card { text-align: center; }
+  .method-icon {
+    width: 70px; height: 70px; border-radius: 50%; margin: 0 auto 1rem;
+    display: flex; align-items: center; justify-content: center; font-size: 2rem;
+  }
+  .method-icon.blue { background: var(--sky-light); }
+  .method-icon.green { background: var(--green-light); }
+  .method-icon.gold { background: var(--gold-light); }
+  .method-card h4 { font-family: var(--font-display); font-weight: 800; font-size: 1rem; color: var(--sky-dark); margin-bottom: 0.4rem; }
+  .method-card p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; }
+
+  /* FEATURES */
+  #features { background: white; }
+  .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .feature-card { text-align: center; border-top: 4px solid var(--sky); }
+  .feature-card:nth-child(2n) { border-top-color: var(--green); }
+  .feature-card:nth-child(3n) { border-top-color: var(--gold); }
+  .feat-icon { font-size: 2.5rem; margin-bottom: 0.8rem; display: block; }
+  .feature-card h4 { font-family: var(--font-display); font-weight: 800; font-size: 1rem; color: var(--sky-dark); margin-bottom: 0.5rem; }
+  .feature-card p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.7; }
+
+  /* NOTICE BOARD */
+  #notices { background: linear-gradient(180deg, #F0F8FF 0%, #E8F5E9 100%); }
+  .notice-admin {
+    background: white; border-radius: var(--radius); padding: 2rem;
+    box-shadow: var(--card-shadow); margin-bottom: 2.5rem; border-left: 5px solid var(--coral);
+  }
+  .notice-admin h3 { font-family: var(--font-display); font-weight: 800; color: var(--coral); margin-bottom: 1.2rem; display: flex; align-items: center; gap: 8px; }
+  .notice-form { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-group { display: flex; flex-direction: column; gap: 4px; }
+  .form-group.full { grid-column: span 2; }
+  .form-group label { font-size: 12px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+  .form-group input, .form-group textarea, .form-group select {
+    padding: 10px 14px; border: 2px solid #E3F2FD;
+    border-radius: 10px; font-size: 14px; font-family: var(--font-main);
+    transition: border-color 0.2s; outline: none; color: var(--text);
+    background: #FAFCFF;
+  }
+  .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--sky); }
+  .form-group textarea { min-height: 80px; resize: vertical; }
+  .file-upload-area {
+    border: 2px dashed var(--sky); border-radius: 10px; padding: 1.5rem;
+    text-align: center; cursor: pointer; background: var(--sky-light);
+    transition: background 0.2s; position: relative;
+  }
+  .file-upload-area:hover { background: #BBDEFB; }
+  .file-upload-area input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+  .file-upload-area p { font-size: 13px; color: var(--sky-dark); font-weight: 600; }
+  .notice-filters { display: flex; gap: 10px; margin-bottom: 1.5rem; flex-wrap: wrap; align-items: center; }
+  .filter-btn {
+    padding: 7px 18px; border-radius: 20px; border: 2px solid var(--sky);
+    background: none; font-size: 13px; font-weight: 600; cursor: pointer;
+    transition: all 0.2s; color: var(--sky);
+  }
+  .filter-btn.active { background: var(--sky); color: white; }
+  .notices-list { display: grid; gap: 1rem; }
+  .notice-item {
+    background: white; border-radius: 12px; padding: 1.2rem 1.5rem;
+    box-shadow: 0 2px 12px rgba(33,150,243,0.08);
+    display: flex; align-items: flex-start; gap: 1rem;
+    border-left: 4px solid var(--sky);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+  }
+  .notice-item:hover { transform: translateX(4px); box-shadow: 0 4px 20px rgba(33,150,243,0.15); }
+  .notice-item.nepali { border-left-color: var(--green); }
+  .notice-item.urgent { border-left-color: var(--coral); }
+  .notice-date-box {
+    min-width: 52px; height: 52px; border-radius: 10px;
+    background: var(--sky-light); display: flex; flex-direction: column;
+    align-items: center; justify-content: center; text-align: center;
+  }
+  .notice-date-box .day { font-family: var(--font-display); font-weight: 900; font-size: 18px; color: var(--sky-dark); line-height: 1; }
+  .notice-date-box .month { font-size: 10px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; }
+  .notice-content { flex: 1; }
+  .notice-title { font-family: var(--font-display); font-weight: 700; font-size: 0.95rem; color: var(--text); margin-bottom: 0.25rem; }
+  .notice-preview { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; }
+  .notice-tags { display: flex; gap: 6px; margin-top: 0.5rem; flex-wrap: wrap; }
+  .ntag {
+    font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 10px;
+  }
+  .ntag.en { background: var(--sky-light); color: var(--sky-dark); }
+  .ntag.np { background: var(--green-light); color: var(--green-dark); }
+  .ntag.urgent { background: #FFEBEE; color: #C62828; }
+  .notice-action { display: flex; flex-direction: column; gap: 6px; align-items: flex-end; }
+  .notice-action button {
+    background: none; border: 1.5px solid var(--sky); border-radius: 8px;
+    padding: 4px 12px; font-size: 11px; font-weight: 600; color: var(--sky); cursor: pointer;
+    transition: all 0.2s;
+  }
+  .notice-action button:hover { background: var(--sky); color: white; }
+  .notice-action .del-btn { border-color: #ef5350; color: #ef5350; }
+  .notice-action .del-btn:hover { background: #ef5350; color: white; }
+
+  /* GALLERY */
+  #gallery { background: white; }
+  .gallery-filters { display: flex; gap: 10px; margin-bottom: 2rem; flex-wrap: wrap; justify-content: center; }
+  .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .gallery-item {
+    border-radius: 12px; overflow: hidden; position: relative;
+    cursor: pointer; height: 160px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s;
+  }
+  .gallery-item:hover { transform: scale(1.03); }
+  .gallery-item.wide { grid-column: span 2; }
+  .gallery-item.tall { grid-row: span 2; height: 332px; }
+  .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s; }
+  .gallery-item:hover img { transform: scale(1.08); }
+  .gallery-overlay {
+    position: absolute; inset: 0; background: rgba(21,101,192,0.0);
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.3s; font-size: 1.5rem; color: white;
+    opacity: 0;
+  }
+  .gallery-item:hover .gallery-overlay { background: rgba(21,101,192,0.4); opacity: 1; }
+  .gal-placeholder {
+    width: 100%; height: 100%; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; font-size: 2rem; gap: 6px;
+  }
+  .gal-placeholder span { font-size: 10px; font-weight: 600; color: white; opacity: 0.85; text-align: center; }
+  .gallery-category { font-size: 10px; font-weight: 700; letter-spacing: 1px; }
+
+  /* LIGHTBOX */
+  .lightbox {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.9);
+    z-index: 9999; display: flex; align-items: center; justify-content: center;
+    opacity: 0; pointer-events: none; transition: opacity 0.3s;
+  }
+  .lightbox.open { opacity: 1; pointer-events: all; }
+  .lightbox-content { max-width: 90vw; max-height: 90vh; border-radius: 12px; overflow: hidden; position: relative; }
+  .lightbox img { max-width: 100%; max-height: 90vh; border-radius: 12px; }
+  .lightbox-close {
+    position: absolute; top: -40px; right: 0; color: white; font-size: 2rem;
+    cursor: pointer; background: none; border: none; font-weight: 700;
+  }
+
+  /* CONTACT */
+  #contact { background: linear-gradient(135deg, #E3F2FD 0%, #E8F5E9 100%); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+  .contact-info h3 { font-family: var(--font-display); font-weight: 800; font-size: 1.5rem; color: var(--sky-dark); margin-bottom: 1.5rem; }
+  .contact-item { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 1.2rem; }
+  .contact-icon {
+    width: 44px; height: 44px; border-radius: 12px; background: var(--sky);
+    display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
+    flex-shrink: 0; color: white;
+  }
+  .contact-detail strong { display: block; font-size: 0.85rem; font-weight: 600; color: var(--text-muted); margin-bottom: 2px; }
+  .contact-detail span { font-size: 0.95rem; font-weight: 600; color: var(--text); }
+  .map-embed { border-radius: var(--radius); overflow: hidden; box-shadow: var(--card-shadow); margin-top: 1.5rem; }
+  .map-embed iframe { width: 100%; height: 220px; border: none; }
+  .contact-form { background: white; border-radius: var(--radius); padding: 2rem; box-shadow: var(--card-shadow); }
+  .contact-form h3 { font-family: var(--font-display); font-weight: 800; color: var(--sky-dark); margin-bottom: 1.5rem; }
+
+  /* FOOTER */
+  footer {
+    background: var(--sky-dark); color: rgba(255,255,255,0.9);
+    padding: 3rem 2rem 1.5rem;
+  }
+  .footer-inner { max-width: 1100px; margin: 0 auto; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; margin-bottom: 2rem; }
+  .footer-brand h3 { font-family: var(--font-display); font-weight: 900; font-size: 1.2rem; color: white; margin-bottom: 0.5rem; }
+  .footer-brand p { font-size: 0.85rem; opacity: 0.75; line-height: 1.7; }
+  .footer-col h4 { font-weight: 700; font-size: 0.9rem; color: white; margin-bottom: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px; }
+  .footer-col a { display: block; font-size: 0.85rem; opacity: 0.7; text-decoration: none; color: white; margin-bottom: 0.4rem; transition: opacity 0.2s; }
+  .footer-col a:hover { opacity: 1; }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.15); padding-top: 1.2rem; text-align: center; font-size: 0.82rem; opacity: 0.65; }
+
+  /* MODAL */
+  .modal-overlay {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.6);
+    z-index: 8888; display: flex; align-items: center; justify-content: center;
+    opacity: 0; pointer-events: none; transition: opacity 0.3s;
+    padding: 1rem;
+  }
+  .modal-overlay.open { opacity: 1; pointer-events: all; }
+  .modal-box {
+    background: white; border-radius: var(--radius); max-width: 600px; width: 100%;
+    max-height: 90vh; overflow-y: auto; position: relative;
+  }
+  .modal-header {
+    padding: 1.5rem 2rem 1rem; border-bottom: 1px solid #E3F2FD;
+    display: flex; align-items: flex-start; justify-content: space-between;
+  }
+  .modal-header h3 { font-family: var(--font-display); font-weight: 800; color: var(--sky-dark); font-size: 1.2rem; }
+  .modal-body { padding: 1.5rem 2rem 2rem; }
+  .modal-close { background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text-muted); padding: 0; line-height: 1; }
+
+  /* STATS BAR */
+  .stats-bar {
+    background: var(--sky-dark); color: white; padding: 1.5rem 2rem;
+    display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap;
+  }
+  .stat-item { text-align: center; }
+  .stat-num { font-family: var(--font-display); font-weight: 900; font-size: 2rem; display: block; }
+  .stat-label { font-size: 0.8rem; opacity: 0.8; text-transform: uppercase; letter-spacing: 0.5px; }
+
+  /* ADMISSION SECTION */
+  #admissions { background: white; }
+  .admission-steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5rem; margin-bottom: 3rem; }
+  .step-card { text-align: center; position: relative; }
+  .step-num {
+    width: 48px; height: 48px; border-radius: 50%; background: var(--sky);
+    color: white; font-family: var(--font-display); font-weight: 900; font-size: 1.1rem;
+    display: flex; align-items: center; justify-content: center; margin: 0 auto 0.8rem;
+    box-shadow: 0 4px 16px rgba(33,150,243,0.3);
+  }
+  .step-card h4 { font-family: var(--font-display); font-weight: 700; font-size: 0.95rem; color: var(--sky-dark); margin-bottom: 0.4rem; }
+  .step-card p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; }
+  .admission-highlight {
+    background: linear-gradient(135deg, var(--sky) 0%, var(--sky-dark) 100%);
+    border-radius: var(--radius); padding: 3rem; text-align: center; color: white;
+  }
+  .admission-highlight h3 { font-family: var(--font-display); font-weight: 900; font-size: 1.8rem; margin-bottom: 0.5rem; }
+  .admission-highlight p { opacity: 0.9; margin-bottom: 1.5rem; }
+
+  /* LANGUAGE HANDLING */
+  [data-lang="np"] { display: none; }
+  body.lang-np [data-lang="en"] { display: none; }
+  body.lang-np [data-lang="np"] { display: block; }
+  body.lang-np span[data-lang="np"] { display: inline; }
+  body.lang-np span[data-lang="en"] { display: none; }
+
+  /* ADMIN TOGGLE */
+  .admin-toggle-btn {
+    position: fixed; bottom: 20px; right: 20px; z-index: 500;
+    background: var(--coral); color: white; border: none;
+    border-radius: 30px; padding: 10px 20px; font-weight: 700; font-size: 13px;
+    cursor: pointer; box-shadow: 0 4px 16px rgba(255,112,67,0.4);
+    transition: all 0.2s;
+  }
+  .admin-toggle-btn:hover { background: #E64A19; transform: scale(1.05); }
+  #admin-panel { display: none; }
+  #admin-panel.open { display: block; }
+
+  /* MOBILE NAV */
+  @media (max-width: 900px) {
+    .hamburger { display: flex; }
+    .nav-links {
+      display: none; position: fixed; top: 70px; left: 0; right: 0;
+      background: white; flex-direction: column; gap: 0;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1); padding: 1rem; z-index: 999;
+    }
+    .nav-links.open { display: flex; }
+    .nav-links a { padding: 10px 16px; border-radius: 10px; font-size: 14px; }
+    .hero-inner { grid-template-columns: 1fr; gap: 2rem; padding-top: 0; }
+    .hero-visual { display: none; }
+    .hero-title { font-size: 1.9rem; }
+    .about-grid { grid-template-columns: 1fr; }
+    .mv-grid { grid-template-columns: 1fr; }
+    .methods-grid { grid-template-columns: 1fr 1fr; }
+    .features-grid { grid-template-columns: 1fr 1fr; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .admission-steps { grid-template-columns: 1fr 1fr; }
+    .stats-bar { gap: 2rem; }
+    .notice-form { grid-template-columns: 1fr; }
+    .notice-form .form-group.full { grid-column: span 1; }
+  }
+  @media (max-width: 580px) {
+    .methods-grid { grid-template-columns: 1fr; }
+    .features-grid { grid-template-columns: 1fr; }
+    .gallery-grid { grid-template-columns: repeat(2,1fr); }
+    .footer-grid { grid-template-columns: 1fr; }
+    .admission-steps { grid-template-columns: 1fr; }
+    .hero-btns { flex-direction: column; }
+    .nav-name { font-size: 12px; max-width: 140px; }
+    section { padding: 50px 1rem; }
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeInUp { from { opacity:0; transform: translateY(30px); } to { opacity:1; transform: translateY(0); } }
+  .fade-in { animation: fadeInUp 0.6s ease forwards; }
+  .delay-1 { animation-delay: 0.1s; opacity:0; }
+  .delay-2 { animation-delay: 0.2s; opacity:0; }
+  .delay-3 { animation-delay: 0.3s; opacity:0; }
+  .delay-4 { animation-delay: 0.4s; opacity:0; }
+
+  /* TOAST */
+  .toast {
+    position: fixed; bottom: 80px; right: 20px; z-index: 9999;
+    background: var(--green-dark); color: white; padding: 12px 20px;
+    border-radius: 12px; font-weight: 600; font-size: 13px;
+    transform: translateY(80px); opacity: 0; transition: all 0.3s;
+    box-shadow: 0 4px 16px rgba(46,125,50,0.4);
+  }
+  .toast.show { transform: translateY(0); opacity: 1; }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a class="nav-brand" href="#home">
+    <div class="nav-logo">LP</div>
+    <div class="nav-name">Shree Little Paradise Basic Boarding School</div>
+  </a>
+  <div class="nav-links" id="navLinks">
+    <a href="#home"><span data-lang="en">Home</span><span data-lang="np">गृहपृष्ठ</span></a>
+    <a href="#about"><span data-lang="en">About</span><span data-lang="np">हाम्रोबारे</span></a>
+    <a href="#admissions"><span data-lang="en">Admissions</span><span data-lang="np">भर्ना</span></a>
+    <a href="#academics"><span data-lang="en">Academics</span><span data-lang="np">शैक्षिक</span></a>
+    <a href="#features"><span data-lang="en">Facilities</span><span data-lang="np">सुविधाहरू</span></a>
+    <a href="#notices"><span data-lang="en">Notices</span><span data-lang="np">सूचना</span></a>
+    <a href="#gallery"><span data-lang="en">Gallery</span><span data-lang="np">ग्यालेरी</span></a>
+    <a href="#contact"><span data-lang="en">Contact</span><span data-lang="np">सम्पर्क</span></a>
+  </div>
+  <div class="nav-right">
+    <div class="lang-toggle">
+      <button class="lang-btn active" id="btnEN" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" id="btnNP" onclick="setLang('np')">NP</button>
+    </div>
+    <div class="hamburger" id="hamburger" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge fade-in">🎓 <span data-lang="en">Admission Open 2081/2082</span><span data-lang="np">भर्ना खुला छ २०८१/२०८२</span></div>
+      <h1 class="hero-title fade-in delay-1">
+        <span data-lang="en">Shree Little Paradise<br><span style="color:var(--green-dark)">Basic Boarding School</span></span>
+        <span data-lang="np">श्री लिटल प्याराडाइज<br><span style="color:var(--green-dark)">आधारभूत बोर्डिङ्ग स्कूल</span></span>
+      </h1>
+      <p class="hero-subtitle-np fade-in delay-2" data-lang="np">श्री लिटल प्याराडाइज आधारभूत बोर्डिङ्ग स्कूल</p>
+      <p class="hero-motto fade-in delay-2">✨ <span data-lang="en">"Marching towards the light"</span><span data-lang="np">"प्रकाशतर्फ अग्रसर"</span></p>
+      <p class="hero-location fade-in delay-2">📍 <span data-lang="en">Aalital Rural Municipality-5, Gobas, Dadeldhura, Nepal</span><span data-lang="np">आलीताल गाउँपालिका-५, गोबास, डडेलधुरा, नेपाल</span></p>
+      <div class="hero-highlights fade-in delay-3">
+        <div class="highlight-chip"><span class="chip-icon">👨‍🏫</span><span data-lang="en">Expert Teachers</span><span data-lang="np">अनुभवी शिक्षकहरू</span></div>
+        <div class="highlight-chip"><span class="chip-icon">🛡️</span><span data-lang="en">Safe Environment</span><span data-lang="np">सुरक्षित वातावरण</span></div>
+        <div class="highlight-chip"><span class="chip-icon">🔬</span><span data-lang="en">Practical Learning</span><span data-lang="np">व्यावहारिक शिक्षा</span></div>
+      </div>
+      <div class="hero-btns fade-in delay-4">
+        <a href="#admissions" class="btn btn-primary">🎒 <span data-lang="en">Apply Now</span><span data-lang="np">अहिले नै भर्ना गर्नुहोस्</span></a>
+        <a href="#contact" class="btn btn-outline">📞 <span data-lang="en">Contact Us</span><span data-lang="np">सम्पर्क गर्नुहोस्</span></a>
+      </div>
+    </div>
+    <div class="hero-visual fade-in delay-2">
+      <div class="hero-img-card big">
+        <div class="img-placeholder" style="background:linear-gradient(135deg,#1565C0,#2196F3)">🏫<span data-lang="en">School Building</span><span data-lang="np">विद्यालय भवन</span></div>
+      </div>
+      <div class="hero-img-card small">
+        <div class="img-placeholder" style="background:linear-gradient(135deg,#388E3C,#66BB6A)">📚<span data-lang="en">Students Learning</span><span data-lang="np">विद्यार्थीहरू</span></div>
+      </div>
+      <div class="hero-img-card small">
+        <div class="img-placeholder" style="background:linear-gradient(135deg,#F57C00,#FFA726)">🎨<span data-lang="en">Fun Activities</span><span data-lang="np">क्रियाकलापहरू</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <span class="stat-num">200+</span>
+    <span class="stat-label"><span data-lang="en">Students</span><span data-lang="np">विद्यार्थी</span></span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">15+</span>
+    <span class="stat-label"><span data-lang="en">Teachers</span><span data-lang="np">शिक्षकहरू</span></span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">PG–8</span>
+    <span class="stat-label"><span data-lang="en">Classes</span><span data-lang="np">कक्षाहरू</span></span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">10+</span>
+    <span class="stat-label"><span data-lang="en">Years of Excellence</span><span data-lang="np">उत्कृष्टताका वर्ष</span></span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">🏫 <span data-lang="en">About Us</span><span data-lang="np">हाम्रोबारे</span></div>
+      <h2 class="section-title" data-lang="en">Nurturing Young Minds Since Decades</h2>
+      <h2 class="section-title" data-lang="np">दशकौंदेखि युवा प्रतिभाको विकास</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-img-wrap">
+        <div class="about-main-img" style="background:linear-gradient(135deg,#E3F2FD,#BBDEFB);border-radius:var(--radius);height:320px;display:flex;align-items:center;justify-content:center;font-size:5rem;flex-direction:column;gap:12px">
+          🏫
+          <span style="font-size:1rem;font-weight:600;color:var(--sky-dark)" data-lang="en">Shree Little Paradise School</span>
+          <span style="font-size:0.9rem;font-weight:600;color:var(--sky-dark)" data-lang="np">श्री लिटल प्याराडाइज स्कूल</span>
+        </div>
+        <div class="about-badge-float">
+          <strong>10+</strong>
+          <span data-lang="en">Years of Service</span><span data-lang="np">सेवाका वर्षहरू</span>
+        </div>
+      </div>
+      <div class="about-text">
+        <h3 data-lang="en">Welcome to Shree Little Paradise Basic Boarding School</h3>
+        <h3 data-lang="np">श्री लिटल प्याराडाइज आधारभूत बोर्डिङ्ग स्कूलमा स्वागत छ</h3>
+        <p data-lang="en">Nestled in the serene hills of Dadeldhura, Nepal, Shree Little Paradise Basic Boarding School is dedicated to providing quality education from Playgroup (PG) to Class 8. We believe in holistic development — shaping not just scholars, but responsible and compassionate human beings.</p>
+        <p data-lang="np">डडेलधुराको शान्त पहाडमा स्थित श्री लिटल प्याराडाइज आधारभूत बोर्डिङ्ग स्कूल प्लेग्रुप (PG) देखि कक्षा ८ सम्म गुणस्तरीय शिक्षा प्रदान गर्न समर्पित छ। हामी समग्र विकासमा विश्वास गर्छौं — केवल विद्वान मात्र नभई जिम्मेवार र सहानुभूतिशील मानवहरू निर्माण गर्छौं।</p>
+        <p data-lang="en">Our motto — <strong>"Marching towards the light"</strong> — reflects our commitment to guiding every child from darkness of ignorance toward the brilliance of knowledge, values, and opportunity.</p>
+        <p data-lang="np">हाम्रो आदर्श वाक्य — <strong>"प्रकाशतर्फ अग्रसर"</strong> — प्रत्येक बच्चालाई अज्ञानको अँध्यारोबाट ज्ञान, मूल्य र अवसरको उज्यालोतर्फ डोर्याउने हाम्रो प्रतिबद्धता झल्काउँछ।</p>
+      </div>
+    </div>
+    <div class="mv-grid">
+      <div class="mv-card">
+        <h4>🎯 <span data-lang="en">Our Mission</span><span data-lang="np">हाम्रो उद्देश्य</span></h4>
+        <p data-lang="en">To provide accessible, high-quality education blending academic excellence with character development in a safe, nurturing environment.</p>
+        <p data-lang="np">सुरक्षित र पोषणशील वातावरणमा शैक्षिक उत्कृष्टता र चरित्र विकासलाई जोड्दै सुलभ, उच्च गुणस्तरीय शिक्षा प्रदान गर्नु।</p>
+      </div>
+      <div class="mv-card green">
+        <h4>🔭 <span data-lang="en">Our Vision</span><span data-lang="np">हाम्रो दृष्टिकोण</span></h4>
+        <p data-lang="en">To be the leading school in Dadeldhura, recognized for producing confident, creative, and globally competent graduates.</p>
+        <p data-lang="np">डडेलधुराको अग्रणी विद्यालय बन्न, आत्मविश्वासी, सिर्जनात्मक र विश्व-सक्षम स्नातकहरू उत्पादनका लागि मान्यता प्राप्त गर्नु।</p>
+      </div>
+      <div class="mv-card gold">
+        <h4>💡 <span data-lang="en">Our Approach</span><span data-lang="np">हाम्रो दृष्टिकोण</span></h4>
+        <p data-lang="en">Child-centered learning, practical activities, moral education, and strong parent-teacher partnerships.</p>
+        <p data-lang="np">बालकेन्द्रित सिकाइ, व्यावहारिक क्रियाकलापहरू, नैतिक शिक्षा, र बलियो अभिभावक-शिक्षक साझेदारी।</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADMISSIONS -->
+<section id="admissions">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag gold">🎒 <span data-lang="en">Admissions</span><span data-lang="np">भर्ना</span></div>
+      <h2 class="section-title" data-lang="en">Join Our School Family</h2>
+      <h2 class="section-title" data-lang="np">हाम्रो विद्यालय परिवारमा सामेल हुनुहोस्</h2>
+      <p class="section-subtitle" data-lang="en">Simple 4-step process to get your child enrolled</p>
+      <p class="section-subtitle" data-lang="np">आफ्नो बच्चालाई भर्ना गर्न सरल ४-चरण प्रक्रिया</p>
+    </div>
+    <div class="admission-steps">
+      <div class="card step-card">
+        <div class="step-num">1</div>
+        <h4 data-lang="en">Visit School</h4>
+        <h4 data-lang="np">विद्यालय भ्रमण</h4>
+        <p data-lang="en">Come visit us and meet our teachers and staff</p>
+        <p data-lang="np">हाम्रो शिक्षकहरू र कर्मचारीहरूलाई भेट्न आउनुहोस्</p>
+      </div>
+      <div class="card step-card">
+        <div class="step-num">2</div>
+        <h4 data-lang="en">Fill Form</h4>
+        <h4 data-lang="np">फारम भर्नुहोस्</h4>
+        <p data-lang="en">Complete the admission application form</p>
+        <p data-lang="np">भर्ना आवेदन फारम पूरा गर्नुहोस्</p>
+      </div>
+      <div class="card step-card">
+        <div class="step-num">3</div>
+        <h4 data-lang="en">Submit Docs</h4>
+        <h4 data-lang="np">कागजात पेश गर्नुहोस्</h4>
+        <p data-lang="en">Birth certificate, photo, and previous reports</p>
+        <p data-lang="np">जन्म प्रमाणपत्र, फोटो, र पुराना रिपोर्टहरू</p>
+      </div>
+      <div class="card step-card">
+        <div class="step-num">4</div>
+        <h4 data-lang="en">Confirmation</h4>
+        <h4 data-lang="np">पुष्टि</h4>
+        <p data-lang="en">Receive confirmation and school materials</p>
+        <p data-lang="np">पुष्टि र विद्यालय सामग्री प्राप्त गर्नुहोस्</p>
+      </div>
+    </div>
+    <div class="admission-highlight">
+      <h3>🎉 <span data-lang="en">Admissions Open for 2081/2082!</span><span data-lang="np">२०८१/२०८२ का लागि भर्ना खुला!</span></h3>
+      <p data-lang="en">PG to Class 8 | Limited Seats Available | Scholarships Available for Meritorious Students</p>
+      <p data-lang="np">PG देखि कक्षा ८ | सीमित सिटहरू उपलब्ध | मेधावी विद्यार्थीहरूका लागि छात्रवृत्ति उपलब्ध</p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:1.5rem">
+        <a href="#contact" class="btn" style="background:white;color:var(--sky-dark)">📞 <span data-lang="en">Call for Inquiry</span><span data-lang="np">सोधपुछका लागि कल गर्नुहोस्</span></a>
+        <a href="#contact" class="btn btn-green">✅ <span data-lang="en">Apply Online</span><span data-lang="np">अनलाइन भर्ना गर्नुहोस्</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACADEMICS -->
+<section id="academics">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag green">📚 <span data-lang="en">Academics</span><span data-lang="np">शैक्षिक</span></div>
+      <h2 class="section-title" data-lang="en">Comprehensive Learning from PG to Class 8</h2>
+      <h2 class="section-title" data-lang="np">PG देखि कक्षा ८ सम्म व्यापक सिकाइ</h2>
+    </div>
+    <div class="classes-strip">
+      <div class="class-pill">PG</div>
+      <div class="class-pill">Nursery</div>
+      <div class="class-pill">LKG</div>
+      <div class="class-pill">UKG</div>
+      <div class="class-pill"><span data-lang="en">Class 1</span><span data-lang="np">कक्षा १</span></div>
+      <div class="class-pill"><span data-lang="en">Class 2</span><span data-lang="np">कक्षा २</span></div>
+      <div class="class-pill"><span data-lang="en">Class 3</span><span data-lang="np">कक्षा ३</span></div>
+      <div class="class-pill"><span data-lang="en">Class 4</span><span data-lang="np">कक्षा ४</span></div>
+      <div class="class-pill"><span data-lang="en">Class 5</span><span data-lang="np">कक्षा ५</span></div>
+      <div class="class-pill"><span data-lang="en">Class 6</span><span data-lang="np">कक्षा ६</span></div>
+      <div class="class-pill"><span data-lang="en">Class 7</span><span data-lang="np">कक्षा ७</span></div>
+      <div class="class-pill"><span data-lang="en">Class 8</span><span data-lang="np">कक्षा ८</span></div>
+    </div>
+    <div class="methods-grid">
+      <div class="card method-card">
+        <div class="method-icon blue">🔬</div>
+        <h4 data-lang="en">Practical Learning</h4>
+        <h4 data-lang="np">व्यावहारिक सिकाइ</h4>
+        <p data-lang="en">Hands-on experiments, projects, and real-world applications to make learning engaging and effective.</p>
+        <p data-lang="np">ह्यान्ड्स-अन प्रयोगहरू, परियोजनाहरू र वास्तविक-विश्व अनुप्रयोगहरूले सिकाइलाई आकर्षक र प्रभावकारी बनाउँछ।</p>
+      </div>
+      <div class="card method-card">
+        <div class="method-icon green">📋</div>
+        <h4 data-lang="en">Lesson Plan System</h4>
+        <h4 data-lang="np">पाठ योजना प्रणाली</h4>
+        <p data-lang="en">Structured lesson plans ensure comprehensive coverage of curriculum with measurable learning outcomes.</p>
+        <p data-lang="np">संरचित पाठ योजनाहरूले मापनयोग्य सिकाइ परिणामहरूसहित पाठ्यक्रमको व्यापक समावेशिता सुनिश्चित गर्दछ।</p>
+      </div>
+      <div class="card method-card">
+        <div class="method-icon gold">🙏</div>
+        <h4 data-lang="en">Moral Education</h4>
+        <h4 data-lang="np">नैतिक शिक्षा</h4>
+        <p data-lang="en">Values, respect, compassion, and ethical behavior are woven into everyday school life.</p>
+        <p data-lang="np">मूल्यहरू, सम्मान, करुणा र नैतिक व्यवहार दैनिक विद्यालय जीवनमा बुनिएको छ।</p>
+      </div>
+      <div class="card method-card">
+        <div class="method-icon blue">💻</div>
+        <h4 data-lang="en">Computer Classes</h4>
+        <h4 data-lang="np">कम्प्युटर कक्षाहरू</h4>
+        <p data-lang="en">Practical computer education preparing students for the digital world from an early age.</p>
+        <p data-lang="np">सानो उमेरदेखि नै डिजिटल संसारका लागि विद्यार्थीहरूलाई तयार पार्ने व्यावहारिक कम्प्युटर शिक्षा।</p>
+      </div>
+      <div class="card method-card">
+        <div class="method-icon green">📖</div>
+        <h4 data-lang="en">Bilingual Education</h4>
+        <h4 data-lang="np">द्विभाषी शिक्षा</h4>
+        <p data-lang="en">Strong foundations in both Nepali and English languages for future opportunities.</p>
+        <p data-lang="np">भविष्यका अवसरहरूका लागि नेपाली र अंग्रेजी दुवै भाषामा बलियो आधारशिला।</p>
+      </div>
+      <div class="card method-card">
+        <div class="method-icon gold">🎭</div>
+        <h4 data-lang="en">Extra-Curricular</h4>
+        <h4 data-lang="np">पाठ्येत्तर क्रियाकलापहरू</h4>
+        <p data-lang="en">Sports, arts, cultural programs, and debates to develop well-rounded personalities.</p>
+        <p data-lang="np">खेलकुद, कला, सांस्कृतिक कार्यक्रमहरू र वाद-विवादले सर्वांगीण व्यक्तित्व विकास गर्दछ।</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">⭐ <span data-lang="en">Facilities</span><span data-lang="np">सुविधाहरू</span></div>
+      <h2 class="section-title" data-lang="en">Why Choose Little Paradise?</h2>
+      <h2 class="section-title" data-lang="np">लिटल प्याराडाइज किन छान्ने?</h2>
+    </div>
+    <div class="features-grid">
+      <div class="card feature-card">
+        <span class="feat-icon">🧼</span>
+        <h4 data-lang="en">Hygiene & Cleanliness</h4>
+        <h4 data-lang="np">सरसफाइ र स्वच्छता</h4>
+        <p data-lang="en">Immaculate school premises with regular sanitization, clean washrooms, and hygiene education programs.</p>
+        <p data-lang="np">नियमित सफाइ, सफा शौचालय र स्वच्छता शिक्षा कार्यक्रमहरूसहित सुव्यवस्थित विद्यालय परिसर।</p>
+      </div>
+      <div class="card feature-card">
+        <span class="feat-icon">🙏</span>
+        <h4 data-lang="en">Moral Education</h4>
+        <h4 data-lang="np">नैतिक शिक्षा</h4>
+        <p data-lang="en">Daily moral science classes, prayer, and character-building activities shape ethical, compassionate students.</p>
+        <p data-lang="np">दैनिक नैतिक विज्ञान कक्षाहरू, प्रार्थना र चरित्र-निर्माण गतिविधिहरूले नैतिक, सहानुभूतिशील विद्यार्थीहरू निर्माण गर्दछ।</p>
+      </div>
+      <div class="card feature-card">
+        <span class="feat-icon">📒</span>
+        <h4 data-lang="en">Homework Diary</h4>
+        <h4 data-lang="np">गृहकार्य डायरी</h4>
+        <p data-lang="en">Systematic homework diary keeps parents informed and helps students build discipline and time management.</p>
+        <p data-lang="np">व्यवस्थित गृहकार्य डायरीले अभिभावकहरूलाई सूचित राख्छ र विद्यार्थीहरूलाई अनुशासन र समय व्यवस्थापन सिक्न मद्दत गर्दछ।</p>
+      </div>
+      <div class="card feature-card">
+        <span class="feat-icon">💻</span>
+        <h4 data-lang="en">Computer Lab</h4>
+        <h4 data-lang="np">कम्प्युटर ल्याब</h4>
+        <p data-lang="en">Modern computer lab with internet access for practical digital literacy and typing skills.</p>
+        <p data-lang="np">व्यावहारिक डिजिटल साक्षरता र टाइपिङ सीपका लागि इन्टरनेट पहुँचसहित आधुनिक कम्प्युटर ल्याब।</p>
+      </div>
+      <div class="card feature-card">
+        <span class="feat-icon">🏆</span>
+        <h4 data-lang="en">Scholarships</h4>
+        <h4 data-lang="np">छात्रवृत्ति</h4>
+        <p data-lang="en">Merit-based and need-based scholarships ensure quality education is accessible to every deserving student.</p>
+        <p data-lang="np">योग्यता-आधारित र आवश्यकता-आधारित छात्रवृत्तिहरूले प्रत्येक योग्य विद्यार्थीलाई गुणस्तरीय शिक्षा सुलभ छ भन्ने सुनिश्चित गर्दछ।</p>
+      </div>
+      <div class="card feature-card">
+        <span class="feat-icon">⚽</span>
+        <h4 data-lang="en">Sports & Activities</h4>
+        <h4 data-lang="np">खेलकुद र क्रियाकलापहरू</h4>
+        <p data-lang="en">Regular sports, drawing, dance, singing and cultural programs to develop talents beyond academics.</p>
+        <p data-lang="np">शैक्षिक क्षेत्रभन्दा बाहिर प्रतिभाहरू विकास गर्न नियमित खेलकुद, चित्रकला, नृत्य, गायन र सांस्कृतिक कार्यक्रमहरू।</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NOTICE BOARD -->
+<section id="notices">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">📢 <span data-lang="en">Notice Board</span><span data-lang="np">सूचना पाटी</span></div>
+      <h2 class="section-title" data-lang="en">Latest Announcements</h2>
+      <h2 class="section-title" data-lang="np">ताजा घोषणाहरू</h2>
+    </div>
+
+    <!-- Admin Panel -->
+    <div id="admin-panel" class="notice-admin">
+      <h3>⚙️ <span data-lang="en">Admin: Post a Notice</span><span data-lang="np">प्रशासक: सूचना पोस्ट गर्नुहोस्</span></h3>
+      <div class="notice-form">
+        <div class="form-group">
+          <label data-lang="en">Notice Title</label>
+          <label data-lang="np">सूचनाको शीर्षक</label>
+          <input type="text" id="noticeTitle" placeholder="Enter notice title / सूचनाको शीर्षक लेख्नुहोस्">
+        </div>
+        <div class="form-group">
+          <label data-lang="en">Date</label>
+          <label data-lang="np">मिति</label>
+          <input type="date" id="noticeDate">
+        </div>
+        <div class="form-group">
+          <label data-lang="en">Language</label>
+          <label data-lang="np">भाषा</label>
+          <select id="noticeLang">
+            <option value="en">English</option>
+            <option value="np">Nepali / नेपाली</option>
+            <option value="both">Both / दुवै</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label data-lang="en">Priority</label>
+          <label data-lang="np">प्राथमिकता</label>
+          <select id="noticePriority">
+            <option value="normal">Normal</option>
+            <option value="urgent">Urgent / अत्यावश्यक</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label data-lang="en">Notice Content</label>
+          <label data-lang="np">सूचनाको सामग्री</label>
+          <textarea id="noticeContent" placeholder="Type notice content here... / यहाँ सूचनाको सामग्री लेख्नुहोस्..."></textarea>
+        </div>
+        <div class="form-group full">
+          <label data-lang="en">Upload Notice Image (Optional)</label>
+          <label data-lang="np">सूचना छवि अपलोड गर्नुहोस् (वैकल्पिक)</label>
+          <div class="file-upload-area">
+            <input type="file" id="noticeImage" accept="image/*" onchange="handleImageUpload(this)">
+            <p>📁 <span data-lang="en">Click to upload JPG/PNG image</span><span data-lang="np">JPG/PNG छवि अपलोड गर्न क्लिक गर्नुहोस्</span></p>
+            <p id="uploadedFileName" style="margin-top:6px;font-size:11px;color:var(--green-dark)"></p>
+          </div>
+        </div>
+        <div class="form-group full" style="display:flex;justify-content:flex-end;gap:10px">
+          <button class="btn btn-outline" onclick="clearNoticeForm()">
+            <span data-lang="en">Clear</span><span data-lang="np">हटाउनुहोस्</span>
+          </button>
+          <button class="btn btn-primary" onclick="postNotice()">
+            📢 <span data-lang="en">Post Notice</span><span data-lang="np">सूचना पोस्ट गर्नुहोस्</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Filter Bar -->
+    <div class="notice-filters">
+      <span style="font-size:13px;font-weight:600;color:var(--text-muted)"><span data-lang="en">Filter:</span><span data-lang="np">फिल्टर:</span></span>
+      <button class="filter-btn active" onclick="filterNotices('all', this)"><span data-lang="en">All</span><span data-lang="np">सबै</span></button>
+      <button class="filter-btn" onclick="filterNotices('en', this)"><span data-lang="en">English</span><span data-lang="np">अंग्रेजी</span></button>
+      <button class="filter-btn" onclick="filterNotices('np', this)"><span data-lang="en">Nepali</span><span data-lang="np">नेपाली</span></button>
+      <button class="filter-btn" onclick="filterNotices('urgent', this)" style="border-color:var(--coral);color:var(--coral)"><span data-lang="en">Urgent</span><span data-lang="np">अत्यावश्यक</span></button>
+    </div>
+
+    <div class="notices-list" id="noticesList"></div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">🖼️ <span data-lang="en">Gallery</span><span data-lang="np">ग्यालेरी</span></div>
+      <h2 class="section-title" data-lang="en">Life at Little Paradise</h2>
+      <h2 class="section-title" data-lang="np">लिटल प्याराडाइजमा जीवन</h2>
+    </div>
+    <div class="gallery-filters">
+      <button class="filter-btn active" onclick="filterGallery('all', this)"><span data-lang="en">All</span><span data-lang="np">सबै</span></button>
+      <button class="filter-btn" onclick="filterGallery('classroom', this)">🏫 <span data-lang="en">Classroom</span><span data-lang="np">कक्षाकोठा</span></button>
+      <button class="filter-btn" onclick="filterGallery('activities', this)">🎨 <span data-lang="en">Activities</span><span data-lang="np">क्रियाकलापहरू</span></button>
+      <button class="filter-btn" onclick="filterGallery('events', this)">🎉 <span data-lang="en">Events</span><span data-lang="np">कार्यक्रमहरू</span></button>
+      <button class="filter-btn" onclick="filterGallery('sports', this)">⚽ <span data-lang="en">Sports</span><span data-lang="np">खेलकुद</span></button>
+    </div>
+    <div class="gallery-grid" id="galleryGrid"></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">📞 <span data-lang="en">Contact Us</span><span data-lang="np">सम्पर्क गर्नुहोस्</span></div>
+      <h2 class="section-title" data-lang="en">Get In Touch</h2>
+      <h2 class="section-title" data-lang="np">सम्पर्कमा रहनुहोस्</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3 data-lang="en">Reach Us Anytime</h3>
+        <h3 data-lang="np">जुनसुकै बेलामा सम्पर्क गर्नुहोस्</h3>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div class="contact-detail">
+            <strong><span data-lang="en">Address</span><span data-lang="np">ठेगाना</span></strong>
+            <span data-lang="en">Aalital Rural Municipality-5, Gobas, Dadeldhura, Nepal</span>
+            <span data-lang="np">आलीताल गाउँपालिका-५, गोबास, डडेलधुरा, नेपाल</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div class="contact-detail">
+            <strong><span data-lang="en">Phone</span><span data-lang="np">फोन</span></strong>
+            <span>+977-XXXX-XXXXXX</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📧</div>
+          <div class="contact-detail">
+            <strong>Email</strong>
+            <span>info@littleparadiseschool.edu.np</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">⏰</div>
+          <div class="contact-detail">
+            <strong><span data-lang="en">Office Hours</span><span data-lang="np">कार्यालय समय</span></strong>
+            <span data-lang="en">Sun–Fri: 9:00 AM – 4:00 PM</span>
+            <span data-lang="np">आइत–शुक्र: बिहान ९:०० – अपराह्न ४:०० बजे</span>
+          </div>
+        </div>
+        <div class="map-embed">
+          <div style="width:100%;height:220px;background:linear-gradient(135deg,#E3F2FD,#BBDEFB);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;border-radius:var(--radius)">
+            <span style="font-size:3rem">🗺️</span>
+            <span style="font-weight:600;color:var(--sky-dark);font-size:0.9rem" data-lang="en">Aalital-5, Gobas, Dadeldhura, Nepal</span>
+            <span style="font-weight:600;color:var(--sky-dark);font-size:0.9rem" data-lang="np">आलीताल-५, गोबास, डडेलधुरा, नेपाल</span>
+            <a href="https://www.google.com/maps/search/Dadeldhura+Nepal" target="_blank" class="btn btn-outline" style="font-size:12px;padding:6px 16px">
+              <span data-lang="en">View on Google Maps</span><span data-lang="np">गुगल म्यापमा हेर्नुहोस्</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <h3>✉️ <span data-lang="en">Send Us a Message</span><span data-lang="np">हामीलाई सन्देश पठाउनुहोस्</span></h3>
+        <div class="notice-form">
+          <div class="form-group full">
+            <label data-lang="en">Your Name</label>
+            <label data-lang="np">तपाईंको नाम</label>
+            <input type="text" id="cName" placeholder="Full Name / पुरा नाम">
+          </div>
+          <div class="form-group">
+            <label data-lang="en">Phone Number</label>
+            <label data-lang="np">फोन नम्बर</label>
+            <input type="tel" id="cPhone" placeholder="+977 XXXXXXXXXX">
+          </div>
+          <div class="form-group">
+            <label data-lang="en">Email (Optional)</label>
+            <label data-lang="np">इमेल (वैकल्पिक)</label>
+            <input type="email" id="cEmail" placeholder="your@email.com">
+          </div>
+          <div class="form-group full">
+            <label data-lang="en">Message</label>
+            <label data-lang="np">सन्देश</label>
+            <textarea id="cMessage" placeholder="Your message here... / तपाईंको सन्देश यहाँ..."></textarea>
+          </div>
+          <div class="form-group full">
+            <button class="btn btn-primary" onclick="sendContact()" style="width:100%;justify-content:center">
+              📨 <span data-lang="en">Send Message</span><span data-lang="np">सन्देश पठाउनुहोस्</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:0.8rem">
+          <div class="nav-logo" style="background:rgba(255,255,255,0.2)">LP</div>
+          <div>
+            <h3 style="font-size:0.95rem">Shree Little Paradise</h3>
+            <p style="font-size:0.75rem;opacity:0.65;margin:0">Basic Boarding School</p>
+          </div>
+        </div>
+        <p data-lang="en">"Marching towards the light" — Building the future of Nepal, one child at a time from Dadeldhura.</p>
+        <p data-lang="np">"प्रकाशतर्फ अग्रसर" — डडेलधुराबाट एक-एक बच्चालाई नेपालको भविष्य निर्माण गर्दै।</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-lang="en">Quick Links</h4>
+        <h4 data-lang="np">छिटो लिंकहरू</h4>
+        <a href="#home"><span data-lang="en">Home</span><span data-lang="np">गृहपृष्ठ</span></a>
+        <a href="#about"><span data-lang="en">About Us</span><span data-lang="np">हाम्रोबारे</span></a>
+        <a href="#admissions"><span data-lang="en">Admissions</span><span data-lang="np">भर्ना</span></a>
+        <a href="#academics"><span data-lang="en">Academics</span><span data-lang="np">शैक्षिक</span></a>
+      </div>
+      <div class="footer-col">
+        <h4 data-lang="en">Explore</h4>
+        <h4 data-lang="np">अन्वेषण गर्नुहोस्</h4>
+        <a href="#features"><span data-lang="en">Facilities</span><span data-lang="np">सुविधाहरू</span></a>
+        <a href="#notices"><span data-lang="en">Notices</span><span data-lang="np">सूचनाहरू</span></a>
+        <a href="#gallery"><span data-lang="en">Gallery</span><span data-lang="np">ग्यालेरी</span></a>
+        <a href="#contact"><span data-lang="en">Contact</span><span data-lang="np">सम्पर्क</span></a>
+      </div>
+      <div class="footer-col">
+        <h4 data-lang="en">Contact</h4>
+        <h4 data-lang="np">सम्पर्क</h4>
+        <a href="#">📍 <span data-lang="en">Dadeldhura, Nepal</span><span data-lang="np">डडेलधुरा, नेपाल</span></a>
+        <a href="tel:+977">📞 +977-XXXX-XXXXXX</a>
+        <a href="mailto:info@littleparadiseschool.edu.np">📧 info@school.edu.np</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-lang="en">© 2024 Shree Little Paradise Basic Boarding School, Dadeldhura, Nepal. All rights reserved.</p>
+      <p data-lang="np">© २०२४ श्री लिटल प्याराडाइज आधारभूत बोर्डिङ्ग स्कूल, डडेलधुरा, नेपाल। सर्वाधिकार सुरक्षित।</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ADMIN TOGGLE BUTTON -->
+<button class="admin-toggle-btn" onclick="toggleAdmin()">⚙️ Admin</button>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <div class="lightbox-content" onclick="event.stopPropagation()">
+    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+    <div id="lightboxContent"></div>
+  </div>
+</div>
+
+<!-- NOTICE MODAL -->
+<div class="modal-overlay" id="noticeModal">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h3 id="modalTitle">Notice Title</h3>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+// ─── LANGUAGE ───────────────────────────────────────────────
+let currentLang = 'en';
+function setLang(lang) {
+  currentLang = lang;
+  document.body.classList.toggle('lang-np', lang === 'np');
+  document.getElementById('btnEN').classList.toggle('active', lang === 'en');
+  document.getElementById('btnNP').classList.toggle('active', lang === 'np');
+}
+
+// ─── NAV ────────────────────────────────────────────────────
+function toggleNav() {
+  document.getElementById('navLinks').classList.toggle('open');
+}
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+});
+
+// ─── TOAST ──────────────────────────────────────────────────
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3000);
+}
+
+// ─── NOTICES ────────────────────────────────────────────────
+let notices = [
+  { id: 1, title: 'Admission Open for Academic Year 2081/2082', titleNp: 'शैक्षिक वर्ष २०८१/२०८२ का लागि भर्ना खुला', date: '2024-01-15', lang: 'both', priority: 'urgent', content: 'We are pleased to announce that admissions are now open for PG to Class 8. Limited seats available. Please contact the school office for more details.', contentNp: 'हामी घोषणा गर्न पाउँदा खुसी छौं कि PG देखि कक्षा ८ सम्मका लागि भर्ना अहिले खुला छ। सीमित सिटहरू उपलब्ध छन्। थप विवरणको लागि कृपया विद्यालय कार्यालयमा सम्पर्क गर्नुहोस्।', image: null },
+  { id: 2, title: 'Annual Sports Day - February 15, 2024', titleNp: 'वार्षिक खेलकुद दिवस - फेब्रुअरी १५, २०२४', date: '2024-01-10', lang: 'both', priority: 'normal', content: 'Annual Sports Day will be held on February 15, 2024. All students are requested to participate in their respective sports events. Parents are warmly invited.', contentNp: 'वार्षिक खेलकुद दिवस फेब्रुअरी १५, २०२४ मा आयोजना गरिनेछ। सबै विद्यार्थीहरूलाई आफ्नो सम्बन्धित खेलकुद कार्यक्रमहरूमा भाग लिन अनुरोध गरिन्छ।', image: null },
+  { id: 3, title: 'Parent-Teacher Meeting Notice', titleNp: 'अभिभावक-शिक्षक बैठक सूचना', date: '2024-01-05', lang: 'np', priority: 'normal', content: 'A parent-teacher meeting will be organized on January 20, 2024 at 10:00 AM. Attendance of all parents is mandatory.', contentNp: 'जनवरी २०, २०२४ मा बिहान १०:०० बजे अभिभावक-शिक्षक बैठक आयोजना गरिनेछ। सबै अभिभावकहरूको उपस्थिति अनिवार्य छ।', image: null },
+  { id: 4, title: 'Scholarship Examination - January 25', titleNp: '', date: '2024-01-03', lang: 'en', priority: 'normal', content: 'Scholarship examination for new admissions will be held on January 25, 2024. Students scoring 80% or above will receive merit scholarships.', contentNp: '', image: null },
+];
+let noticeFilter = 'all';
+let uploadedImageData = null;
+
+function renderNotices() {
+  const list = document.getElementById('noticesList');
+  let filtered = notices;
+  if (noticeFilter === 'urgent') filtered = notices.filter(n => n.priority === 'urgent');
+  else if (noticeFilter === 'en') filtered = notices.filter(n => n.lang === 'en' || n.lang === 'both');
+  else if (noticeFilter === 'np') filtered = notices.filter(n => n.lang === 'np' || n.lang === 'both');
+
+  if (filtered.length === 0) {
+    list.innerHTML = `<div class="card" style="text-align:center;color:var(--text-muted)">No notices found / कुनै सूचना फेला परेन</div>`;
+    return;
+  }
+
+  list.innerHTML = filtered.map(n => {
+    const d = new Date(n.date);
+    const day = d.getDate();
+    const month = d.toLocaleString('en', { month: 'short' });
+    const isUrgent = n.priority === 'urgent';
+    const isNp = n.lang === 'np';
+    const title = currentLang === 'np' && n.titleNp ? n.titleNp : n.title;
+    const preview = currentLang === 'np' && n.contentNp ? n.contentNp : n.content;
+    return `<div class="notice-item ${isUrgent ? 'urgent' : isNp ? 'nepali' : ''}" onclick="openNotice(${n.id})">
+      <div class="notice-date-box">
+        <span class="day">${day}</span>
+        <span class="month">${month}</span>
+      </div>
+      <div class="notice-content">
+        <div class="notice-title">${title}</div>
+        <div class="notice-preview">${preview.substring(0, 100)}${preview.length > 100 ? '...' : ''}</div>
+        <div class="notice-tags">
+          ${n.lang === 'en' || n.lang === 'both' ? '<span class="ntag en">EN</span>' : ''}
+          ${n.lang === 'np' || n.lang === 'both' ? '<span class="ntag np">NP</span>' : ''}
+          ${isUrgent ? '<span class="ntag urgent">🚨 URGENT</span>' : ''}
+          ${n.image ? '<span class="ntag en" style="background:#FFF8E1;color:#E65100">📷 IMAGE</span>' : ''}
+        </div>
+      </div>
+      <div class="notice-action" onclick="event.stopPropagation()">
+        <button onclick="openNotice(${n.id})">👁 View</button>
+        ${n.content ? `<button onclick="downloadNotice(${n.id})">⬇ Download</button>` : ''}
+        <button class="del-btn" onclick="deleteNotice(${n.id})">🗑 Delete</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function filterNotices(filter, btn) {
+  noticeFilter = filter;
+  document.querySelectorAll('.notice-filters .filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderNotices();
+}
+
+function openNotice(id) {
+  const n = notices.find(x => x.id === id);
+  if (!n) return;
+  const title = currentLang === 'np' && n.titleNp ? n.titleNp : n.title;
+  const content = currentLang === 'np' && n.contentNp ? n.contentNp : n.content;
+  document.getElementById('modalTitle').textContent = title;
+  document.getElementById('modalBody').innerHTML = `
+    <p style="font-size:12px;color:var(--text-muted);margin-bottom:1rem">📅 ${new Date(n.date).toLocaleDateString('en-NP', {year:'numeric',month:'long',day:'numeric'})}</p>
+    ${n.image ? `<img src="${n.image}" style="width:100%;border-radius:10px;margin-bottom:1rem">` : ''}
+    <p style="line-height:1.8;color:var(--text)">${content}</p>
+    ${n.contentNp && n.lang === 'both' ? `<hr style="margin:1rem 0;border-color:#E3F2FD"><p style="line-height:1.8;color:var(--text)">${n.contentNp}</p>` : ''}
+    <div style="margin-top:1.5rem">
+      <button class="btn btn-primary" onclick="downloadNotice(${n.id})" style="font-size:13px">⬇ Download Notice</button>
+    </div>`;
+  document.getElementById('noticeModal').classList.add('open');
+}
+
+function closeModal() {
+  document.getElementById('noticeModal').classList.remove('open');
+}
+
+function deleteNotice(id) {
+  if (confirm('Delete this notice?')) {
+    notices = notices.filter(n => n.id !== id);
+    renderNotices();
+    showToast('✅ Notice deleted successfully!');
+  }
+}
+
+function downloadNotice(id) {
+  const n = notices.find(x => x.id === id);
+  if (!n) return;
+  const content = `SHREE LITTLE PARADISE BASIC BOARDING SCHOOL\nMarching towards the light\nAalital-5, Gobas, Dadeldhura, Nepal\n\n` +
+    `NOTICE\n${'='.repeat(50)}\n\nTitle: ${n.title}\nDate: ${n.date}\n\n${n.content}\n\n${n.contentNp || ''}`;
+  const blob = new Blob([content], { type: 'text/plain' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `notice_${n.id}.txt`;
+  a.click();
+  showToast('📥 Notice downloaded!');
+}
+
+function handleImageUpload(input) {
+  const file = input.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = e => { uploadedImageData = e.target.result; };
+    reader.readAsDataURL(file);
+    document.getElementById('uploadedFileName').textContent = '✅ ' + file.name;
+  }
+}
+
+function postNotice() {
+  const title = document.getElementById('noticeTitle').value.trim();
+  const content = document.getElementById('noticeContent').value.trim();
+  const date = document.getElementById('noticeDate').value || new Date().toISOString().split('T')[0];
+  const lang = document.getElementById('noticeLang').value;
+  const priority = document.getElementById('noticePriority').value;
+  if (!title) { alert('Please enter a notice title / कृपया सूचनाको शीर्षक लेख्नुहोस्'); return; }
+  notices.unshift({ id: Date.now(), title, titleNp: lang === 'np' ? title : '', date, lang, priority, content, contentNp: lang === 'np' ? content : '', image: uploadedImageData });
+  renderNotices();
+  clearNoticeForm();
+  showToast('📢 Notice posted successfully!');
+}
+
+function clearNoticeForm() {
+  ['noticeTitle', 'noticeDate', 'noticeContent'].forEach(id => document.getElementById(id).value = '');
+  document.getElementById('noticeLang').value = 'en';
+  document.getElementById('noticePriority').value = 'normal';
+  document.getElementById('uploadedFileName').textContent = '';
+  uploadedImageData = null;
+}
+
+// ─── GALLERY ────────────────────────────────────────────────
+const galleryItems = [
+  { cat: 'classroom', icon: '📚', label: 'Classroom Learning', color: '#1565C0,#2196F3', wide: true },
+  { cat: 'activities', icon: '🎨', label: 'Art & Drawing', color: '#E91E63,#F06292' },
+  { cat: 'sports', icon: '⚽', label: 'Sports Day', color: '#388E3C,#66BB6A' },
+  { cat: 'events', icon: '🎉', label: 'Annual Function', color: '#F57C00,#FFA726', tall: true },
+  { cat: 'classroom', icon: '💻', label: 'Computer Lab', color: '#5C6BC0,#9FA8DA' },
+  { cat: 'activities', icon: '🎭', label: 'Cultural Program', color: '#7B1FA2,#CE93D8' },
+  { cat: 'sports', icon: '🏃', label: 'Athletics', color: '#0097A7,#4DD0E1' },
+  { cat: 'events', icon: '🏆', label: 'Prize Distribution', color: '#D32F2F,#E57373' },
+  { cat: 'classroom', icon: '📖', label: 'Reading Time', color: '#00796B,#4DB6AC' },
+  { cat: 'activities', icon: '🎵', label: 'Music Class', color: '#1565C0,#64B5F6' },
+  { cat: 'sports', icon: '🏸', label: 'Badminton', color: '#558B2F,#AED581' },
+  { cat: 'events', icon: '🎪', label: 'School Carnival', color: '#E65100,#FFB74D' },
+];
+let galleryFilter = 'all';
+
+function renderGallery() {
+  const grid = document.getElementById('galleryGrid');
+  const filtered = galleryFilter === 'all' ? galleryItems : galleryItems.filter(g => g.cat === galleryFilter);
+  grid.innerHTML = filtered.map((g, i) =>
+    `<div class="gallery-item${g.wide ? ' wide' : ''}${g.tall ? ' tall' : ''}" onclick="openLightbox(${i})">
+      <div class="gal-placeholder" style="background:linear-gradient(135deg,#${g.color.replace(',','_').split('_')[0].replace('#','')},#${g.color.split(',')[1].replace('#','').trim()})">
+        <span style="font-size:${g.wide||g.tall?'3.5':'2.5'}rem">${g.icon}</span>
+        <span>${g.label}</span>
+        <span class="gallery-category" style="background:rgba(255,255,255,0.2);padding:2px 8px;border-radius:8px">${g.cat.toUpperCase()}</span>
+      </div>
+      <div class="gallery-overlay">👁</div>
+    </div>`
+  ).join('');
+}
+
+function filterGallery(cat, btn) {
+  galleryFilter = cat;
+  document.querySelectorAll('.gallery-filters .filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderGallery();
+}
+
+function openLightbox(i) {
+  const filtered = galleryFilter === 'all' ? galleryItems : galleryItems.filter(g => g.cat === galleryFilter);
+  const g = filtered[i];
+  const lb = document.getElementById('lightbox');
+  const lbc = document.getElementById('lightboxContent');
+  lbc.innerHTML = `<div style="width:60vw;height:70vh;max-width:800px;background:linear-gradient(135deg,#${g.color.split(',')[0].replace('#','').trim()},#${g.color.split(',')[1].replace('#','').trim()});border-radius:12px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px">
+    <span style="font-size:5rem">${g.icon}</span>
+    <span style="font-size:1.5rem;font-weight:700;color:white">${g.label}</span>
+    <span style="font-size:0.9rem;color:rgba(255,255,255,0.8);text-transform:uppercase;letter-spacing:2px">${g.cat}</span>
+  </div>`;
+  lb.classList.add('open');
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+}
+
+// ─── ADMIN ──────────────────────────────────────────────────
+function toggleAdmin() {
+  const p = document.getElementById('admin-panel');
+  p.classList.toggle('open');
+  if (p.classList.contains('open')) p.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// ─── CONTACT ────────────────────────────────────────────────
+function sendContact() {
+  const name = document.getElementById('cName').value.trim();
+  const phone = document.getElementById('cPhone').value.trim();
+  const msg = document.getElementById('cMessage').value.trim();
+  if (!name || !phone) { alert('Please fill in your name and phone number.'); return; }
+  ['cName','cPhone','cEmail','cMessage'].forEach(id => document.getElementById(id).value = '');
+  showToast('✅ Message sent! We\'ll contact you soon. / सन्देश पठाइयो! हामी छिट्टै सम्पर्क गर्नेछौं।');
+}
+
+// ─── MODAL CLOSE ────────────────────────────────────────────
+document.getElementById('noticeModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeModal(); closeLightbox(); } });
+
+// ─── INIT ───────────────────────────────────────────────────
+document.getElementById('noticeDate').value = new Date().toISOString().split('T')[0];
+renderNotices();
+renderGallery();
+
+// SMOOTH ACTIVE NAV LINKS
+window.addEventListener('scroll', () => {
+  const sections = ['home','about','admissions','academics','features','notices','gallery','contact'];
+  const scrollPos = window.scrollY + 100;
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && el.offsetTop <= scrollPos && el.offsetTop + el.offsetHeight > scrollPos) {
+      document.querySelectorAll('.nav-links a').forEach(a => {
+        a.style.background = a.getAttribute('href') === '#' + id ? 'var(--sky-light)' : '';
+        a.style.color = a.getAttribute('href') === '#' + id ? 'var(--sky-dark)' : '';
+      });
+    }
+  });
+});
+</script>
+</body>
+</html>
